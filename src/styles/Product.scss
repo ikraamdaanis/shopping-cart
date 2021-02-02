@@ -1,0 +1,128 @@
+.product-container {
+  width: 1280px;
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+
+  @media (max-width: 1000px) {
+    padding: 2rem 0 12rem;
+  }
+
+  .back-button {
+    background: var(--borders);
+    color: var(--foreground);
+    cursor: pointer;
+    margin-left: 1rem;
+    width: 88px;
+    height: 40px;
+    border: 0;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .product-details {
+    margin-top: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-gap: 10px;
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr;
+    }
+
+    &-image {
+      overflow: hidden;
+      width: 100%;
+      border-radius: 5px;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translateY(-1px);
+      }
+    }
+    &-description {
+      border-radius: 5px;
+      overflow: hidden;
+      align-self: flex-start;
+      padding: 1rem;
+      border: 1px solid var(--borders);
+      .title {
+        font-size: 2.2rem;
+      }
+      .details {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        color: var(--foreground-secondary);
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--borders);
+      }
+      .bottom-details {
+        margin: 2rem 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .quantity {
+          label {
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+          select {
+            font-size: 1rem;
+            text-align-last: center;
+            padding: 0.2rem 0.4rem 0.2rem 0.3rem;
+            border-radius: 3px;
+            border: 1px solid var(--borders);
+            color: var(--foreground);
+            background: var(--background);
+            outline: none;
+            cursor: pointer;
+          }
+        }
+        .price {
+          h2 {
+            transform-origin: right !important;
+            cursor: none;
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      .add-to-cart {
+        .add-to-cart-button {
+          display: block;
+          width: 100%;
+          height: 50px;
+          background: #f2c352;
+          color: black;
+          border: 0;
+          font-size: 1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          border-radius: 3px;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            filter: brightness(1.1);
+          }
+          &:active {
+            transform: scale(1.05);
+          }
+          &:disabled {
+            cursor: not-allowed;
+            filter: brightness(0.8);
+          }
+        }
+      }
+    }
+  }
+}
+
+.cover {
+  position: absolute;
+  z-index: 80;
+  height: calc(100vh - 50px);
+  width: 100vw;
+  background: yellow;
+}
